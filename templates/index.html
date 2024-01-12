@@ -33,8 +33,26 @@
         <div class="mt-4">
             <h2>Predicted Energy Consumption:</h2>
             <p>{{ prediction }} MW</p>
+            
+            <!-- Visualization for Truth Data and Predictions -->
+            <div>
+                <h3>Truth Data and Predictions</h3>
+                <!-- Use a relative path for the image -->
+               <!-- Use a relative path to the image in the "static" folder -->
+            <img src="{{ url_for('static', filename='output.jpg') }}" alt="Prediction Plot">
+            </div>
+        
+            <br><div>
+                <h3>Raw Dat and Prediction</h3>
+                <!-- Use a relative path for the image -->
+               <!-- Use a relative path to the image in the "static" folder -->
+            <img src="{{ url_for('static', filename='output2.png') }}" alt="Prediction Plot">
+
+
+            </div>
         </div>
         {% endif %}
+        
     </div>
 
     <!-- Add Bootstrap JS and Popper.js (for Bootstrap features) -->

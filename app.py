@@ -6,12 +6,12 @@ import xgboost as xgb
 
 app = Flask(__name__)
 
-# Load CSV data
+#CSV data
 df = pd.read_csv('Forecast-Energy-Consumption/data/PJME_hourly.csv') 
 df = df.set_index('Datetime')
 df.index = pd.to_datetime(df.index)
 
-# Create time series features
+#time series features
 def create_features(df):
     df = df.copy()
     df['hour'] = df.index.hour
@@ -58,7 +58,7 @@ reg.fit(
 model_filename = 'xgboost_model.joblib'
 joblib.dump(reg, model_filename)
 
-# Load the trained model
+#trained model
 loaded_model = joblib.load(model_filename)
 
 @app.route('/')
