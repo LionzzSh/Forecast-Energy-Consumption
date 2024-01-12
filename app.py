@@ -7,7 +7,7 @@ import xgboost as xgb
 app = Flask(__name__)
 
 # Load CSV data
-df = pd.read_csv('Forecast-Energy-Consumption/data/PJME_hourly.csv')  # Replace with the actual path
+df = pd.read_csv('Forecast-Energy-Consumption/data/PJME_hourly.csv') 
 df = df.set_index('Datetime')
 df.index = pd.to_datetime(df.index)
 
